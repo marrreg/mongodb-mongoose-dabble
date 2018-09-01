@@ -7,6 +7,9 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+var mongoose = require('mongoose');
+mongoose.connect('mongodb+srv://mkoszlak:testpwd123@cluster0-tsn1p.mongodb.net/test?retryWrites=true');
+
 var app = express();
 
 var swig = require('swig');
