@@ -9,7 +9,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/newnote', function(req, res) {
-  return standupCtrl.getNode(req, res);
-})
+  return standupCtrl.getNote(req, res);
+});
+
+router.post('/newnote', function(req, res) {
+  return standupCtrl.create(req, res);
+});
 
 module.exports = router;
