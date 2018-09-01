@@ -1,16 +1,14 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var customerSchema = new Schema({
-    name:       String,
-    address:    String,
-    city:       String,
-    state:      String,
-    country:    String,
-    zipCode:    String,
-    createdOn:  Date,
-    isActive:   Boolean
+var standupSchema = new Schema({
+    memberName: String,
+    project: String,
+    workYesterday: String,
+    workToday: String,
+    impediment: String,
+    createdOn: { type: Date, default: Date.now }
 });
 
-// Build a model from the customer schema...
-var Customer = mongoose.model('Customer', customerSchema);
+// Expose (export) the model now...
+module.exports = mongoose.model('Standup', standupSchema);
